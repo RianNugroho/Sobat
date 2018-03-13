@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Sobat</string>
+    <string name="login_failed">Login Gagal</string>
+</resources>
