@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Sobat</string>
     <string name="login_failed">Login Gagal</string>
+    <string name="facebook_app_id">171366233585138</string>
+    <string name="fb_login_protocol_scheme">fb171366233585138</string>
+    <string name="nickname_add">Buat nickname kamu</string>
+    <string name="next">Lanjut</string>
 </resources>
