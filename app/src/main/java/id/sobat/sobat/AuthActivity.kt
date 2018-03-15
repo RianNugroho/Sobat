@@ -20,16 +20,13 @@ import com.facebook.login.widget.LoginButton
 import com.facebook.CallbackManager
 import com.google.firebase.auth.FacebookAuthProvider
 import com.facebook.AccessToken
+import id.sobat.sobat.Model.DataLocal.Companion.RC_SIGN_IN
+import id.sobat.sobat.Model.DataLocal.Companion.TAG_SIGN_IN
 
 class AuthActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
     private lateinit var mCallbackManager:CallbackManager
-
-    companion object {
-        const val RC_SIGN_IN = 9698
-        const val TAG = "SIGN_IN"
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,16 +43,16 @@ class AuthActivity : AppCompatActivity() {
         loginButton.setReadPermissions("email", "public_profile")
         loginButton.registerCallback(mCallbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
-                Log.d(AuthActivity.TAG, "facebook:onSuccess:$loginResult")
+                Log.d(TAG_SIGN_IN, "facebook:onSuccess:$loginResult")
                 handleFacebookAccessToken(loginResult.accessToken)
             }
 
             override fun onCancel() {
-                Log.d(AuthActivity.TAG, "facebook:onCancel")
+                Log.d(TAG_SIGN_IN, "facebook:onCancel")
             }
 
             override fun onError(error: FacebookException) {
-                Log.d(AuthActivity.TAG, "facebook:onError", error)
+                Log.d(TAG_SIGN_IN, "facebook:onError", error)
             }
         })
     }
@@ -84,7 +81,7 @@ class AuthActivity : AppCompatActivity() {
                 firebaseAuthWithGoogle(account)
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
-                Log.w(AuthActivity.TAG, "Google sign in failed", e)
+                Log.w(TAG_SIGN_IN, "Google sign in failed", e)
                 // ...
             }
 
@@ -102,19 +99,19 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
-        Log.d(AuthActivity.TAG, "firebaseAuthWithGoogle:" + acct.id!!)
+        Log.d(TAG_SIGN_IN, "firebaseAuthWithGoogle:" + acct.id!!)
 
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
-                        Log.d(AuthActivity.TAG, "signInWithCredential:success")
+                        Log.d(TAG_SIGN_IN, "signInWithCredential:success")
                         val user = mAuth.currentUser
                         updateUI(user)
                     } else {
                         // If sign in fails, display a message to the user.
-                        Log.w(AuthActivity.TAG, "signInWithCredential:failure", task.exception)
+                        Log.w(TAG_SIGN_IN, "signInWithCredential:failure", task.exception)
                         Toast.makeText(this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show()
                         updateUI(null)
                     }
@@ -123,25 +120,25 @@ class AuthActivity : AppCompatActivity() {
 
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
-            val intent = Intent(this, SetNickActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
         }
     }
 
     private fun handleFacebookAccessToken(token: AccessToken) {
-        Log.d(AuthActivity.TAG, "handleFacebookAccessToken:$token")
+        Log.d(TAG_SIGN_IN, "handleFacebookAccessToken:$token")
 
         val credential = FacebookAuthProvider.getCredential(token.token)
         mAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
                 // Sign in success, update UI with the signed-in user's information
-                Log.d(TAG, "signInWithCredential:success")
+                Log.d(TAG_SIGN_IN, "signInWithCredential:success")
                 val user = mAuth.currentUser
                 updateUI(user)
             } else {
                 // If sign in fails, display a message to the user.
-                Log.w(TAG, "signInWithCredential:failure", it.exception)
+                Log.w(TAG_SIGN_IN, "signInWithCredential:failure", it.exception)
                 Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
                 updateUI(null)
             }

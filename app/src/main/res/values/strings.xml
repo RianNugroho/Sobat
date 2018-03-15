@@ -5,4 +5,5 @@
     <string name="fb_login_protocol_scheme">fb171366233585138</string>
     <string name="nickname_add">Buat nickname kamu</string>
     <string name="next">Lanjut</string>
-</resources>
+    <string name="error_database">Terdapat kesalahan, Silahkan ulangi!</string>
+=</resources>
