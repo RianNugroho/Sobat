@@ -40,6 +40,7 @@ dependencies {
     implementation 'com.facebook.android:facebook-android-sdk:4.31.0'
     implementation 'com.google.firebase:firebase-firestore:11.8.0'
     implementation 'com.aurelhubert:ahbottomnavigation:2.1.0'
+    implementation 'com.ss.bannerslider:bannerslider:1.8.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

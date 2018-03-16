@@ -14,4 +14,12 @@
     <string name="donation">Donasi</string>
     <string name="close_back_click">Tekan sekali lagi untuk keluar</string>
     <string name="profile">Profil</string>
+    <string name="text_chat">Tulis curhatan kamu</string>
+    <string name="curhat">Curhat</string>
+    <string name="money_don">Donasi uang tunai</string>
+    <string name="ads_don">Donasi iklan</string>
+    <string name="expert_don">Donasi tenaga ahli</string>
+    <string name="description_don">
+        Ulurkan bantuanmu untuk saudaramu. Mari bersama berkomitmen membangun Indonesia sehat.
+    </string>
 </resources>
