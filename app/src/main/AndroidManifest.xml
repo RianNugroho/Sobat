@@ -53,7 +53,7 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".SetNickActivity"/>
     </application>
 

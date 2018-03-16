@@ -36,7 +36,7 @@ class SetNickActivity : AppCompatActivity() {
                 db.collection("users").document("${mAuth.currentUser?.uid}").set(user)
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
-                                val intent = Intent(this, HomeActivity::class.java)
+                                val intent = Intent(this, MainActivity::class.java)
                                 startActivity(intent)
                                 finish()
                             } else {
@@ -52,7 +52,7 @@ class SetNickActivity : AppCompatActivity() {
         db.collection("users").document("${mAuth.currentUser?.uid}").get()
                 .addOnCompleteListener {
                     if (it.result.exists() && it.isSuccessful) {
-                        val intent = Intent(this, HomeActivity::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {
