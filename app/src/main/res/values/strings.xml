@@ -22,4 +22,7 @@
     <string name="description_don">
         Ulurkan bantuanmu untuk saudaramu. Mari bersama berkomitmen membangun Indonesia sehat.
     </string>
+    <string name="conselor">Konselor</string>
+    <string name="pop_cons">Polpuler Konselor</string>
+    <string name="success_curhat">Sukses mengirimkan ke konselor, silahkan tunggu beberapa menit</string>
 </resources>

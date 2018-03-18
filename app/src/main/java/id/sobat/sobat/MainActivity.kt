@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Get width
+        val dm = resources.displayMetrics
+        DataLocal.width = dm.widthPixels
+
         // Toolbar
         val toolbar = findViewById<Toolbar>(R.id.main_toolbar)
         setSupportActionBar(toolbar)
@@ -102,7 +106,15 @@ class MainActivity : AppCompatActivity() {
     private fun checkNickname() {
         db.collection("users").document("${mAuth.currentUser?.uid}").get()
                 .addOnCompleteListener {
-                    if (!it.result.exists() && it.isSuccessful) {
+                    if (it.result.exists() && it.isSuccessful) {
+                        DataLocal.user = hashMapOf(
+                                "id_user" to it.result.id,
+                                "name" to it.result.data["name"],
+                                "email" to it.result.data["email"],
+                                "nickname" to it.result.data["nickname"],
+                                "date" to it.result.data["date"]
+                        )
+                    } else if (!it.result.exists()) {
                         val intent = Intent(this, SetNickActivity::class.java)
                         startActivity(intent)
                         finish()

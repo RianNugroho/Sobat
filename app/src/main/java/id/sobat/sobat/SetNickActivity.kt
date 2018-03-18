@@ -9,9 +9,9 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import id.sobat.sobat.Model.DataLocal.Companion.TAG_NICKNAME
-import id.sobat.sobat.Model.User
 
 class SetNickActivity : AppCompatActivity() {
 
@@ -29,10 +29,13 @@ class SetNickActivity : AppCompatActivity() {
         btnNickname.setOnClickListener {
             val nickname = etNickname.text.toString()
             if (nickname != "" && nickname.isNotEmpty()) {
-                val user = User()
-                user.email = mAuth.currentUser?.email
-                user.nama = mAuth.currentUser?.displayName
-                user.nickname = nickname
+                val user: HashMap<String, Any?>
+                        = hashMapOf(
+                            "name" to mAuth.currentUser?.displayName,
+                            "email" to mAuth.currentUser?.email,
+                            "nickname" to nickname,
+                            "date" to FieldValue.serverTimestamp()
+                        )
                 db.collection("users").document("${mAuth.currentUser?.uid}").set(user)
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
