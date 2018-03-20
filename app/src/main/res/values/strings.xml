@@ -7,6 +7,7 @@
     <string name="next">Lanjut</string>
     <string name="error_database">Terdapat kesalahan, Silahkan ulangi!</string>
     <string name="search">Cari konselor</string>
+    <string name="search_chat">Cari chat</string>
     <string name="notification">Notifikasi</string>
     <string name="home">Beranda</string>
     <string name="chat">Obrolan</string>
@@ -25,4 +26,6 @@
     <string name="conselor">Konselor</string>
     <string name="pop_cons">Polpuler Konselor</string>
     <string name="success_curhat">Sukses mengirimkan ke konselor, silahkan tunggu beberapa menit</string>
+    <string name="add">Tambah</string>
+    <string name="archive">Arsip</string>
 </resources>

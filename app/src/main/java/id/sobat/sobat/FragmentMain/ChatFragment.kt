@@ -52,7 +52,7 @@ class ChatFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater!!.inflate(R.menu.home_menu, menu)
+        inflater!!.inflate(R.menu.chat_menu, menu)
     }
 
     override fun onStart() {
