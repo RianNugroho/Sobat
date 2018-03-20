@@ -1,8 +1,8 @@
 package id.sobat.sobat
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -29,13 +29,12 @@ class SetNickActivity : AppCompatActivity() {
         btnNickname.setOnClickListener {
             val nickname = etNickname.text.toString()
             if (nickname != "" && nickname.isNotEmpty()) {
-                val user: HashMap<String, Any?>
-                        = hashMapOf(
-                            "name" to mAuth.currentUser?.displayName,
-                            "email" to mAuth.currentUser?.email,
-                            "nickname" to nickname,
-                            "date" to FieldValue.serverTimestamp()
-                        )
+                val user: HashMap<String, Any?> = hashMapOf(
+                        "name" to mAuth.currentUser?.displayName,
+                        "email" to mAuth.currentUser?.email,
+                        "nickname" to nickname,
+                        "date" to FieldValue.serverTimestamp()
+                )
                 db.collection("users").document("${mAuth.currentUser?.uid}").set(user)
                         .addOnCompleteListener {
                             if (it.isSuccessful) {

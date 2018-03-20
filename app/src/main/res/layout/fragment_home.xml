@@ -1,10 +1,10 @@
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="id.sobat.sobat.FragmentMain.HomeFragment"
-    android:background="@color/grey">
+    android:background="@color/grey"
+    tools:context="id.sobat.sobat.FragmentMain.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,8 +17,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:descendantFocusability="beforeDescendants"
-            android:focusableInTouchMode="true"
             android:focusable="true"
+            android:focusableInTouchMode="true"
             android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="0dp">
 
@@ -31,22 +31,22 @@
                     android:id="@+id/et_curhat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="120dp"
+                    android:background="@color/white"
+                    android:gravity="top"
                     android:hint="@string/text_chat"
                     android:inputType="textMultiLine"
-                    android:gravity="top"
-                    android:padding="8dp"
-                    android:background="@color/white" />
+                    android:minHeight="120dp"
+                    android:padding="8dp" />
 
                 <Button
                     android:id="@+id/btn_curhat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/curhat"
                     android:background="@color/colorPrimary"
-                    android:textColor="@color/ic_launcher_background"
                     android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"/>
+                    android:foreground="?attr/selectableItemBackground"
+                    android:text="@string/curhat"
+                    android:textColor="@color/ic_launcher_background" />
 
             </LinearLayout>
 
@@ -58,8 +58,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:descendantFocusability="beforeDescendants"
-            android:focusableInTouchMode="true"
             android:focusable="true"
+            android:focusableInTouchMode="true"
             android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="0dp">
 
@@ -71,13 +71,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="4dp"
                     android:text="@string/pop_cons"
                     android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
-                    android:padding="4dp"/>
+                    android:textStyle="bold" />
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rv_pop_conselor"
+                    android:id="@+id/rv_pop_conselors"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal" />

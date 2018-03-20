@@ -14,11 +14,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import id.sobat.sobat.R
-import id.sobat.sobat.AuthActivity
-import java.util.HashMap
 import id.sobat.sobat.Adapter.RvaChat
+import id.sobat.sobat.AuthActivity
 import id.sobat.sobat.Model.DataLocal
+import id.sobat.sobat.R
+import java.util.HashMap
+import kotlin.collections.ArrayList
 
 class ChatFragment : Fragment() {
 
@@ -61,7 +62,7 @@ class ChatFragment : Fragment() {
         }
     }
 
-    private fun initRvConselor(context: Context, list: List<HashMap<String, Any?>>, rv: RecyclerView) {
+    private fun initRvChats(context: Context, list: List<HashMap<String, Any?>>, rv: RecyclerView) {
         val adapter = RvaChat(context, list)
         rv.adapter = adapter
         rv.setHasFixedSize(false)
@@ -71,7 +72,7 @@ class ChatFragment : Fragment() {
     }
 
     private fun getDbCons(view: View) {
-        val rvPopConselor = view.findViewById<RecyclerView>(R.id.rv_chat)
+        val rvChats = view.findViewById<RecyclerView>(R.id.rv_chats)
 
         db.collection("chats")
                 .whereEqualTo("id_user", mAuth.currentUser?.uid)
@@ -92,7 +93,7 @@ class ChatFragment : Fragment() {
                             )
                             dataList.add(data)
                         }
-                        initRvConselor(view.context, dataList, rvPopConselor)
+                        initRvChats(view.context, dataList, rvChats)
                     } else {
                         Log.d(DataLocal.TAG_QUERY, "Error getting documents: ", it.exception)
                     }

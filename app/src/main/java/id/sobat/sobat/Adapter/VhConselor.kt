@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import id.sobat.sobat.R
 
-class VhConselor(view: View): RecyclerView.ViewHolder(view) {
+class VhConselor(view: View) : RecyclerView.ViewHolder(view) {
     val lnCons = view.findViewById<LinearLayout?>(R.id.ln_cons)
     val ivCons = view.findViewById<ImageView?>(R.id.iv_cons)
     val tvNameCons = view.findViewById<TextView?>(R.id.tv_name_cons)

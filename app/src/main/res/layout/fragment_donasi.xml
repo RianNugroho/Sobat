@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="id.sobat.sobat.FragmentMain.DonasiFragment"
-    android:background="@color/grey">
+    android:background="@color/grey"
+    tools:context="id.sobat.sobat.FragmentMain.DonasiFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,32 +18,32 @@
             android:text="@string/donation"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/description_don"
             android:layout_marginBottom="16dp"
-            android:textAlignment="center"/>
+            android:text="@string/description_don"
+            android:textAlignment="center" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/money_don"/>
+            android:text="@string/money_don" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/ads_don"/>
+            android:text="@string/ads_don" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/expert_don"/>
+            android:text="@string/expert_don" />
 
     </LinearLayout>
 

@@ -8,15 +8,12 @@ import android.view.*
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.firestore.FirebaseFirestore
 import id.sobat.sobat.AuthActivity
-
 import id.sobat.sobat.R
 
 class DonasiFragment : Fragment() {
 
     private lateinit var mAuth: FirebaseAuth
-    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

@@ -1,6 +1,6 @@
 package id.sobat.sobat.Model
 
-import java.util.HashMap
+import java.util.*
 
 class DataLocal {
     companion object {

@@ -19,11 +19,11 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import id.sobat.sobat.Adapter.RvaConselor
-import id.sobat.sobat.Model.DataLocal
 import id.sobat.sobat.AuthActivity
-
+import id.sobat.sobat.Model.DataLocal
 import id.sobat.sobat.R
 import java.util.HashMap
+import kotlin.collections.ArrayList
 
 class HomeFragment : Fragment() {
 
@@ -52,12 +52,13 @@ class HomeFragment : Fragment() {
         val etCurhat = view.findViewById<EditText>(R.id.et_curhat)
         btnCurhat.setOnClickListener {
             val curhat = etCurhat.text.toString()
-            val dataCurhat: HashMap<String, Any?>
-                    = hashMapOf(
+            val dataCurhat: HashMap<String, Any?> = hashMapOf(
                     "accept" to false,
                     "from" to mAuth.currentUser?.uid,
                     "date" to FieldValue.serverTimestamp(),
-                    "text" to curhat
+                    "text" to curhat,
+                    "name" to DataLocal.user["name"],
+                    "avatar" to DataLocal.user["avatar"]
             )
             db.collection("public_problems").document().set(dataCurhat)
                     .addOnCompleteListener {
@@ -77,7 +78,7 @@ class HomeFragment : Fragment() {
         inflater!!.inflate(R.menu.home_menu, menu)
     }
 
-    private fun initRvConselor(context: Context, list: List<HashMap<String, Any?>>, rv: RecyclerView) {
+    private fun initRvConselors(context: Context, list: List<HashMap<String, Any?>>, rv: RecyclerView) {
         val adapter = RvaConselor(context, list)
         rv.adapter = adapter
         rv.setHasFixedSize(false)
@@ -87,7 +88,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun getDbCons(view: View) {
-        val rvPopConselor = view.findViewById<RecyclerView>(R.id.rv_pop_conselor)
+        val rvPopConselors = view.findViewById<RecyclerView>(R.id.rv_pop_conselors)
 
         db.collection("conselors")
                 .orderBy("point", Query.Direction.DESCENDING)
@@ -105,7 +106,7 @@ class HomeFragment : Fragment() {
                             )
                             dataList.add(data)
                         }
-                        initRvConselor(view.context, dataList, rvPopConselor)
+                        initRvConselors(view.context, dataList, rvPopConselors)
                     } else {
                         Log.d(DataLocal.TAG_QUERY, "Error getting documents: ", it.exception)
                     }

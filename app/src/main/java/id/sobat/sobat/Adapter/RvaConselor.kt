@@ -9,7 +9,7 @@ import android.widget.Toast
 import com.squareup.picasso.Picasso
 import id.sobat.sobat.Model.DataLocal
 import id.sobat.sobat.R
-import java.util.HashMap
+import java.util.*
 
 class RvaConselor(context: Context, private val listCons: List<HashMap<String, Any?>>)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

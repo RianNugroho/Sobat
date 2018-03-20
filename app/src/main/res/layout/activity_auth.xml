@@ -40,15 +40,15 @@
         app:layout_constraintGuide_begin="400dp" />
 
     <ImageView
-        android:contentDescription="@string/app_name"
         android:layout_width="256dp"
         android:layout_height="256dp"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
         tools:layout_editor_absoluteY="63dp" />
 
     <android.support.constraint.Guideline
