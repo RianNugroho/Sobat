@@ -54,7 +54,7 @@ class RvaForum(context: Context, private val listForum: List<HashMap<String, Any
             }
             var text = listForum[position]["text"].toString()
             if (text.length > 56) {
-                text = text.substring(0, 56) + "..."
+                text = text.substring(0, 76) + "..."
             }
             val date = listForum[position]["date"].toString()
 
@@ -66,7 +66,7 @@ class RvaForum(context: Context, private val listForum: List<HashMap<String, Any
             Picasso.get()
                     .load(listForum[position]["photo"].toString())
                     .placeholder(R.drawable.ic_photo_camera)
-                    .error(R.drawable.ic_warning)
+                    .error(R.drawable.default_forum_img)
                     .into(holder0.ivForum)
         }
     }

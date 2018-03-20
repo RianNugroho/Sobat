@@ -1,7 +1,14 @@
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rv_chats"
+    android:id="@+id/sr_chats"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
-    tools:context="id.sobat.sobat.FragmentMain.ChatFragment" />
+    tools:context="id.sobat.sobat.FragmentMain.ChatFragment" >
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_chats"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey" />
+
+</android.support.v4.widget.SwipeRefreshLayout>

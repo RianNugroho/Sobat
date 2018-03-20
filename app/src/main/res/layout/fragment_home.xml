@@ -1,91 +1,98 @@
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:id="@+id/sr_home"
     tools:context="id.sobat.sobat.FragmentMain.HomeFragment">
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:background="@color/grey">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/curhat"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:descendantFocusability="beforeDescendants"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:foreground="?attr/selectableItemBackground"
-            app:cardCornerRadius="0dp">
+            android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
+                android:id="@+id/curhat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_margin="10dp"
+                android:descendantFocusability="beforeDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="0dp">
 
-                <EditText
-                    android:id="@+id/et_curhat"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:gravity="top"
-                    android:hint="@string/text_chat"
-                    android:inputType="textMultiLine"
-                    android:minHeight="120dp"
-                    android:padding="8dp" />
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/btn_curhat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:text="@string/curhat"
-                    android:textColor="@color/ic_launcher_background" />
+                    <EditText
+                        android:id="@+id/et_curhat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="top"
+                        android:hint="@string/text_chat"
+                        android:inputType="textMultiLine"
+                        android:minHeight="120dp"
+                        android:padding="8dp" />
 
-            </LinearLayout>
+                    <Button
+                        android:id="@+id/btn_curhat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:text="@string/curhat"
+                        android:textColor="@color/ic_launcher_background" />
 
-        </android.support.v7.widget.CardView>
+                </LinearLayout>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/pop_conselor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:descendantFocusability="beforeDescendants"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:foreground="?attr/selectableItemBackground"
-            app:cardCornerRadius="0dp">
+            </android.support.v7.widget.CardView>
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
+                android:id="@+id/pop_conselor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_margin="10dp"
+                android:descendantFocusability="beforeDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="0dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="4dp"
-                    android:text="@string/pop_cons"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rv_pop_conselors"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="@string/pop_cons"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_pop_conselors"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" />
 
-        </android.support.v7.widget.CardView>
+                </LinearLayout>
 
-    </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-</android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.v4.widget.SwipeRefreshLayout>

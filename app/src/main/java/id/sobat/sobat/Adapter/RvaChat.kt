@@ -58,8 +58,8 @@ class RvaChat(context: Context, private val listChat: List<HashMap<String, Any?>
             }
             val date = listChat[position]["date"].toString()
 
-            holder0.lnChat?.setOnClickListener(listenerClick)
-            holder0.lnChat?.tag = holder0
+            holder0.clChat?.setOnClickListener(listenerClick)
+            holder0.clChat?.tag = holder0
             holder0.tvNameChat?.text = nameCons
             holder0.tvTextChat?.text = lastChat
             holder0.tvDateChat?.text = date
