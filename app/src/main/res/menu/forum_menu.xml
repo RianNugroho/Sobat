@@ -4,14 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/add_forum"
         android:enabled="true"
         android:icon="@drawable/ic_edit"
         android:title="@string/add"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/archive_forum"
         android:enabled="true"
         android:icon="@drawable/ic_book"
         android:title="@string/archive"

@@ -4,14 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/notification"
         android:enabled="true"
         android:icon="@drawable/ic_bell"
         android:title="@string/notification"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/profile"
         android:enabled="true"
         android:icon="@drawable/ic_user"
         android:title="@string/profile"
