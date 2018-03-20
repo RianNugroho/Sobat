@@ -3,7 +3,7 @@
 
     <item android:drawable="@color/ic_launcher_background" />
     <item
-        android:drawable="@drawable/ic_launcher_foreground"
-        android:gravity="center" />
+        android:drawable="@drawable/ic_launcher_splash"
+        android:gravity="center"/>
 
 </layer-list>
