@@ -41,7 +41,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:11.8.0'
     implementation 'com.aurelhubert:ahbottomnavigation:2.1.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
-    compile 'com.google.firebase:firebase-storage:11.8.0'
+    implementation 'com.google.firebase:firebase-storage:11.8.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
