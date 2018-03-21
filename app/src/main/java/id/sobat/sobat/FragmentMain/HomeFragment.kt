@@ -25,6 +25,9 @@ import id.sobat.sobat.Model.DataLocal
 import id.sobat.sobat.R
 import java.util.HashMap
 import kotlin.collections.ArrayList
+import id.sobat.sobat.ProfileActivity
+import id.sobat.sobat.NotificationActivity
+import id.sobat.sobat.SearchActivity
 
 class HomeFragment : Fragment() {
 
@@ -79,11 +82,36 @@ class HomeFragment : Fragment() {
             srHome.isRefreshing = false
         }
 
+        // Search
+        val sHome = activity!!.findViewById<CardView>(R.id.search_bar)
+        sHome.setOnClickListener {
+            val intent = Intent(context, SearchActivity::class.java)
+            intent.putExtra(DataLocal.DATA_KEY_SHARE, "conselor")
+            context?.startActivity(intent)
+        }
+
         return view
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater!!.inflate(R.menu.home_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.notification_home -> {
+                val intent = Intent(context, NotificationActivity::class.java)
+                context?.startActivity(intent)
+                return true
+            }
+            R.id.profile_home -> {
+                val intent = Intent(context, ProfileActivity::class.java)
+                context?.startActivity(intent)
+                return true
+            }
+        }
+
+        return false
     }
 
     private fun initRvConselors(context: Context, list: List<HashMap<String, Any?>>, rv: RecyclerView) {

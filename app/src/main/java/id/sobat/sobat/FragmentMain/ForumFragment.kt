@@ -21,6 +21,8 @@ import id.sobat.sobat.Model.DataLocal
 import id.sobat.sobat.R
 import java.util.HashMap
 import kotlin.collections.ArrayList
+import id.sobat.sobat.CreateForumActivity
+import id.sobat.sobat.HistForumActivity
 
 class ForumFragment : Fragment() {
 
@@ -52,6 +54,22 @@ class ForumFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater!!.inflate(R.menu.forum_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.edit_forum -> {
+                val intent = Intent(context, CreateForumActivity::class.java)
+                context?.startActivity(intent)
+                return true
+            }
+            R.id.archive_forum -> {
+                val intent = Intent(context, HistForumActivity::class.java)
+                context?.startActivity(intent)
+                return true
+            }
+        }
+        return false
     }
 
     override fun onStart() {

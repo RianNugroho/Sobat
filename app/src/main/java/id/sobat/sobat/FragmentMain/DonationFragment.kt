@@ -13,6 +13,7 @@ import id.sobat.sobat.AuthActivity
 import id.sobat.sobat.R
 import id.sobat.sobat.DonationActivity
 import id.sobat.sobat.Model.DataLocal
+import id.sobat.sobat.HistDonationActivity
 
 class DonationFragment : Fragment() {
 
@@ -35,19 +36,19 @@ class DonationFragment : Fragment() {
         val btnDonationExpert = view.findViewById<Button>(R.id.btn_donation_expert)
 
         btnDonationMoney.setOnClickListener {
-            val intent = Intent(context, DonationActivity::class.java)
+            val intent = Intent(view.context, DonationActivity::class.java)
             intent.putExtra(DataLocal.DATA_KEY_SHARE, "money")
             view.context.startActivity(intent)
         }
 
         btnDonationAds.setOnClickListener {
-            val intent = Intent(context, DonationActivity::class.java)
+            val intent = Intent(view.context, DonationActivity::class.java)
             intent.putExtra(DataLocal.DATA_KEY_SHARE, "ads")
             view.context.startActivity(intent)
         }
 
         btnDonationExpert.setOnClickListener {
-            val intent = Intent(context, DonationActivity::class.java)
+            val intent = Intent(view.context, DonationActivity::class.java)
             intent.putExtra(DataLocal.DATA_KEY_SHARE, "expert")
             view.context.startActivity(intent)
         }
@@ -56,7 +57,18 @@ class DonationFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater!!.inflate(R.menu.donasi_menu, menu)
+        inflater!!.inflate(R.menu.donation_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.archive_donation -> {
+                val intent = Intent(context, HistDonationActivity::class.java)
+                context?.startActivity(intent)
+                return true
+            }
+        }
+        return false
     }
 
     override fun onStart() {

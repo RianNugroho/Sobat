@@ -21,6 +21,7 @@ import id.sobat.sobat.Model.DataLocal
 import id.sobat.sobat.R
 import java.util.HashMap
 import kotlin.collections.ArrayList
+import id.sobat.sobat.SearchActivity
 
 class ChatFragment : Fragment() {
 
@@ -53,6 +54,18 @@ class ChatFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater!!.inflate(R.menu.chat_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.search_chat -> {
+                val intent = Intent(context, SearchActivity::class.java)
+                intent.putExtra(DataLocal.DATA_KEY_SHARE, "chat")
+                context?.startActivity(intent)
+                return true
+            }
+        }
+        return false
     }
 
     override fun onStart() {
