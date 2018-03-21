@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import id.sobat.sobat.FragmentMain.ChatFragment
-import id.sobat.sobat.FragmentMain.DonasiFragment
+import id.sobat.sobat.FragmentMain.DonationFragment
 import id.sobat.sobat.FragmentMain.ForumFragment
 import id.sobat.sobat.FragmentMain.HomeFragment
 import id.sobat.sobat.Model.DataLocal
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                 0 -> trans.replace(R.id.content, HomeFragment())
                 1 -> trans.replace(R.id.content, ChatFragment())
                 2 -> trans.replace(R.id.content, ForumFragment())
-                3 -> trans.replace(R.id.content, DonasiFragment())
+                3 -> trans.replace(R.id.content, DonationFragment())
             }
             trans.commit()
             true

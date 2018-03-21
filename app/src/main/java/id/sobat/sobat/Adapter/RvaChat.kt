@@ -1,12 +1,14 @@
 package id.sobat.sobat.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.squareup.picasso.Picasso
+import id.sobat.sobat.ChatActivity
+import id.sobat.sobat.Model.DataLocal
 import id.sobat.sobat.R
 import java.util.*
 
@@ -17,10 +19,9 @@ class RvaChat(context: Context, private val listChat: List<HashMap<String, Any?>
     private val listenerClick = View.OnClickListener {
         val vHolder = it.tag as VhChat
         val idUser = listChat[vHolder.adapterPosition]["id_chat"].toString()
-        Toast.makeText(context, idUser, Toast.LENGTH_SHORT).show()
-//        val intent = Intent(context, DetailCons::class.java)
-//        intent.putExtra(DataLocal.DATA_KEY_SHARE, idUser)
-//        context.startActivity(intent)
+        val intent = Intent(context, ChatActivity::class.java)
+        intent.putExtra(DataLocal.DATA_KEY_SHARE, idUser)
+        context.startActivity(intent)
     }
 
     override fun getItemViewType(position: Int): Int {

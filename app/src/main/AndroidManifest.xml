@@ -55,6 +55,17 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".SetNickActivity" />
+        <activity android:name=".ConselorActivity" />
+        <activity android:name=".ForumActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".DonationActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".AllConselorActivity" />
+        <activity android:name=".CreateForumActivity" />
+        <activity android:name=".HistForumActivity" />
+        <activity android:name=".HistDonationActivity"></activity>
     </application>
 
 </manifest>

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey"
-    tools:context="id.sobat.sobat.FragmentMain.DonasiFragment">
+    tools:context="id.sobat.sobat.FragmentMain.DonationFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,18 +28,21 @@
             android:textAlignment="center" />
 
         <Button
+            android:id="@+id/btn_donation_money"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/money_don" />
 
         <Button
+            android:id="@+id/btn_donation_ads"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ads_don" />
 
         <Button
+            android:id="@+id/btn_donation_expert"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -1,12 +1,13 @@
 package id.sobat.sobat.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.squareup.picasso.Picasso
+import id.sobat.sobat.ConselorActivity
 import id.sobat.sobat.Model.DataLocal
 import id.sobat.sobat.R
 import java.util.*
@@ -18,10 +19,9 @@ class RvaConselor(context: Context, private val listCons: List<HashMap<String, A
     private val listenerClick = View.OnClickListener {
         val vHolder = it.tag as VhConselor
         val idUser = listCons[vHolder.adapterPosition]["id_user"].toString()
-        Toast.makeText(context, idUser, Toast.LENGTH_SHORT).show()
-//        val intent = Intent(context, DetailCons::class.java)
-//        intent.putExtra(DataLocal.DATA_KEY_SHARE, idUser)
-//        context.startActivity(intent)
+        val intent = Intent(context, ConselorActivity::class.java)
+        intent.putExtra(DataLocal.DATA_KEY_SHARE, idUser)
+        context.startActivity(intent)
     }
 
     override fun getItemViewType(position: Int): Int {
